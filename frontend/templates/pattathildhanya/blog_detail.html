@@ -1,0 +1,112 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ post.title }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+  .blog-content ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+
+  .blog-content li {
+    margin-bottom: 0.5rem;
+  }
+</style>
+
+  </head>
+  <body>
+    <!-- Back to Home Button -->
+    <div class="absolute top-8 left-4 sm:left-6 lg:left-8 z-10">
+<a href="{% url 'index' %}"class="flex items-center text-gray-700 hover:text-medical-blue transition-colors duration-300 group">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+            </svg>
+            <span class="text-sm font-medium">Back to Home</span>
+        </a>
+    </div>
+
+    <section class="flex lg:flex-row flex-col items-start justify-between px-10 lg:px-[200px]">
+      <!-- Main Content -->
+      <div class="flex flex-col gap-16 px-4 lg:px-10 py-16 border-r-2 w-full lg:w-3/4">
+        <div class="max-w-8xl">
+          <h1 class="text-3xl mb-4">{{ post.title }}</h1>
+          <p class="text-gray-500 mb-10">by {{ post.by }} | {{ post.created_at|date:"F d, Y" }} | {{ post.category }} | 0 comments</p>
+
+          <p class="text-gray-600 mb-5">
+            <!-- Featured Image -->
+      {% if post.image %}
+<div class="flex justify-center my-8">
+  <div class="w-[400px] h-[400px] overflow-hidden rounded-2xl shadow-xl ">
+    <img 
+      src="{{ post.image.url }}" 
+      alt="{{ post.title }}"
+      class="w-full h-full object-cover"
+    >
+  </div>
+</div>
+{% endif %}
+
+      <br><br>
+            <div class="blog-content">
+  {{ post.content|safe }}
+</div>
+
+        </div>
+
+        <!-- Comment Section -->
+        <div class="max-w-8xl">
+          <h2 class="text-2xl  mb-3">Submit a Comment</h2>
+          <p class="text-gray-500 mb-4">Your email address will not be published. Required fields are marked *</p>
+          <div class="flex flex-col items-start gap-4">
+            <textarea placeholder="Comment*" class="bg-gray-200 w-full h-[200px] p-2 text-[18px] outline-none" name="message"></textarea>
+            <input placeholder="Name *" class="bg-gray-200 w-full lg:w-1/2 h-[50px] p-2 text-[18px] outline-none" type="text" />
+            <input placeholder="Email *" class="bg-gray-200 w-full lg:w-1/2 h-[50px] p-2 text-[18px] outline-none" type="email" />
+            <input placeholder="Website" class="bg-gray-200 w-full lg:w-1/2 h-[50px] p-2 text-[18px] outline-none" type="text" />
+            <div class="flex gap-2">
+              <input type="checkbox" />
+              <p class="text-gray-500 text-sm">Save my name, email, and website in this browser for the next time I comment.</p>
+            </div>
+            <div class="w-full flex justify-end">
+              <button class="px-7 py-3 border-blue-400 border-2 rounded-sm text-[20px] text-blue-400 hover:bg-blue-50">Submit Comment</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Sidebar -->
+      <div class="ml-0 lg:ml-10 flex flex-col items-center my-16 justify-start w-full lg:w-1/4">
+        <div class="border flex w-full">
+          <input class="flex h-[40px] w-full border-none px-2" type="text" placeholder="Search..." />
+          <button class="bg-gray-300 px-3">Search</button>
+        </div>
+        <div class="flex flex-col gap-2 justify-center items-start w-full mt-6">
+          <h2 class="text-2xl mb-3">Recent Posts</h2>
+          
+          {% for recent in recent_posts %}
+    <a 
+      href="{% url 'blog_detail' recent.id %}"
+      class="px-[18px] text-gray-500 hover:text-[#2ea3f2] transition"
+    >
+      {{ recent.title }}
+    </a>
+  {% empty %}
+    <p class="text-gray-500 px-[18px]">No recent posts.</p>
+  {% endfor %}
+
+
+          <h2 class="text-2xl mt-6 mb-2">Recent Comments</h2>
+          <p class="text-gray-500">No Comments to show.</p>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-[#140505] py-12 flex items-center justify-center">
+      <p class="text-gray-500">A unit of Avanzo Cyber Security Solutions | Avanzo Designs</p>
+    </footer>
+  </body>
+</html>

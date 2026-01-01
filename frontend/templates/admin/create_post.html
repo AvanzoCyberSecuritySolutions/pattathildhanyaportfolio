@@ -1,0 +1,152 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+  .django-ckeditor-widget {
+    width: 100% !important;
+  }
+
+  .django-ckeditor-widget iframe {
+    width: 100% !important;
+  }
+</style>
+<style>
+  ul {
+    list-style-type: disc;
+    padding-left: 1.5rem;
+  }
+</style>
+
+
+</head>
+
+<body class="bg-gray-100">
+
+<div class="flex min-h-screen">
+
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="w-64 bg-white shadow-lg p-5 flex flex-col justify-between">
+        <div>
+            <!-- Profile -->
+            <div class="flex items-center space-x-3 mb-8">
+                <img src="{% static 'pattathildhanya/photos/dp.jpeg' %}"
+                     class="w-12 h-12 rounded-full object-cover">
+                <div>
+                    <p class="font-semibold text-lg">Pattathildhanya</p>
+                    <p class="text-gray-500 text-sm">Administrator</p>
+                </div>
+            </div>
+
+            <!-- Menu -->
+            <nav class="space-y-2">
+                <a href="{% url 'admin_dashboard' %}"
+                   class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100">
+                    <span>📊</span><span>Dashboard</span>
+                </a>
+
+                <a href="{% url 'admin_gallery' %}"
+                   class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100">
+                    <span>🖼️</span><span>Gallery</span>
+                </a>
+
+                <a href="{% url 'create_post' %}"
+                   class="flex items-center space-x-3 p-2 rounded-lg bg-orange-100 text-orange-600 font-medium">
+                    <span>➕</span><span>Create New Post</span>
+                </a>
+
+                <a href="{% url 'admin_home_gallery' %}"
+                   class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100">
+                    <span>🖼️</span><span>Home Page Gallery</span>
+                </a>
+                
+                <a href="{% url 'all_posts' %}"
+                   class="flex items-center space-x-3 p-2 rounded-lg hover:bg-gray-100">
+                    <span>📁</span><span>All Posts</span>
+                </a>
+            </nav>
+        </div>
+
+        <!-- Logout -->
+        <form action="{% url 'admin_logout' %}" method="POST">
+            {% csrf_token %}
+            <button class="flex items-center space-x-3 p-2 mt-6 w-full 
+                           hover:bg-red-100 text-red-600 rounded-lg font-medium">
+                <span>🚪</span> <span>Logout</span>
+            </button>
+        </form>
+    </aside>
+
+    <!-- ============ MAIN CONTENT ============ -->
+    <main class="flex-1 p-8 overflow-y-auto">
+
+        <h1 class="text-3xl font-bold mb-2">Create New Post</h1>
+        <p class="text-gray-600 mb-6">Add a new blog post or save it as a draft.</p>
+
+        <form method="POST" enctype="multipart/form-data"
+              class="w-full max-w-3xl bg-white p-8 rounded-2xl shadow-lg space-y-6">
+            {% csrf_token %}
+
+            <!-- Title -->
+            <div>
+                <label for="id_title" class="block text-gray-700 font-medium mb-1">Title</label>
+                {{ form.title|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" }}
+            </div>
+
+            <!-- Excerpt -->
+            <div>
+                <label for="id_excerpt" class="block text-gray-700 font-medium mb-1">Excerpt</label>
+                {{ form.excerpt|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" }}
+            </div>
+
+            <!-- Content -->
+            <div>
+                <label for="id_content" class="block text-gray-700 font-medium mb-1">Content</label>
+                {{ form.content|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400 h-56" }}
+            </div>
+           
+
+            <!-- Category -->
+            <div>
+                <label for="id_category" class="block text-gray-700 font-medium mb-1">Category</label>
+                {{ form.category|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" }}
+            </div>
+
+            <!-- Image Upload -->
+            <div>
+                <label for="id_image" class="block text-gray-700 font-medium mb-1">Featured Image</label>
+                {{ form.image|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" }}
+            </div>
+
+            <!-- By whom -->
+            <div>
+                <label for="id_by" class="block text-gray-700 font-medium mb-1">By Whom</label>
+                {{ form.by|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" }}
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-6">
+                <button type="submit" name="status" value="published"
+                        class="w-full sm:w-auto px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition">
+                    Publish
+                </button>
+
+                <button type="submit" name="status" value="draft"
+                        class="w-full sm:w-auto px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition">
+                    Save as Draft
+                </button>
+            </div>
+        </form>
+
+    </main>
+
+</div>
+
+</body>
+</html>

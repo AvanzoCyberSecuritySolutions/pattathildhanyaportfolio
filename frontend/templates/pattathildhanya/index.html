@@ -1,0 +1,931 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pattathildhanya</title>
+
+    <link rel="stylesheet" href="{% static 'pattathildhanya/css/style.css' %}" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .gradient-bg {
+        background: linear-gradient(
+          135deg,
+          #e0f2fe 0%,
+          #fff3e0 50%,
+          #f3e5f5 100%
+        );
+      }
+      
+      .carousel-container {
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .carousel-track {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+      
+      .carousel-image {
+        flex-shrink: 0;
+        margin: 0 10px;
+        transition: all 0.3s ease-in-out;
+        opacity: 0.7;
+        transform: scale(0.9);
+      }
+      
+      .carousel-image.active {
+        opacity: 1;
+        transform: scale(1);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        border: 3px solid #3b82f6;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <div class="container mx-auto">
+      <!-- Banner Section -->
+      <div
+        class="flex flex-col w-full lg:flex-row lg:justify-center lg:items-end px-24 relative"
+        style="
+          background-image: url('{% static 'pattathildhanya/photos/Banner.png' %}');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+          min-height: 400px;
+        "
+      >
+        <!-- Left Content -->
+        <div class="flex-1 space-y-6 mb-10">
+          <div class="space-y-2">
+            <h2 class="text-2xl lg:text-3xl font-light text-gray-700">I'm</h2>
+            <h1
+              class="text-4xl lg:text-6xl font-bold text-gray-800 leading-tight"
+            >
+              Dr. PATTATHIL<br />
+              DHANYA<br />
+              MENON
+            </h1>
+          </div>
+
+          <div class="space-y-1 text-gray-600">
+            <p class="text-lg lg:text-xl font-medium">
+              Cyber Crime Investigator
+            </p>
+            <p class="text-base lg:text-lg">
+              First woman cybercrime investigator
+            </p>
+          </div>
+        </div>
+
+        <!-- Right Content - Photo -->
+        <div class="flex-1 flex justify-center lg:justify-end">
+          <div class="relative">
+            <!-- Professional Photo -->
+            <div class="w-80 h-96 lg:w-96 lg:h-[480px]">
+              <img
+                src="{% static 'pattathildhanya/photos/pic.png' %}"
+                alt="Dr. Pattathil Dhanya Menon - Professional Photo"
+                class="w-full h-full object-cover object-center"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+    
+      document.querySelector("h1").addEventListener("mouseenter", function () {
+        this.style.transform = "translateY(-2px)";
+        this.style.transition = "transform 0.3s ease";
+      });
+
+      document.querySelector("h1").addEventListener("mouseleave", function () {
+        this.style.transform = "translateY(0)";
+      });
+    </script>
+
+    <section class="bg-white py-8 md:py-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+          <!-- Image Section -->
+          <div class="w-full md:w-1/3 flex justify-center md:justify-start">
+            <img
+              src="{% static 'pattathildhanya/photos/2.jpg' %}"
+              alt="A smiling woman with dark hair and sunglasses, looking to her right."
+              class="w-full max-w-sm h-auto object-cover"
+            />
+          </div>
+
+          <!-- Text Section -->
+          <div class="w-full md:w-2/3 mt-8 md:mt-0 md:pl-12 lg:pl-16">
+            <p class="text-gray-600 font-semibold text-lg">Me</p>
+            <h2
+              class="text-4xl md:text-5xl font-extrabold text-black tracking-wide mt-2"
+            >
+              THE<br />INVESTIGATOR
+            </h2>
+            <p
+              class="text-gray-700 text-base font- md:text-lg leading-relaxed mt-6"
+            >
+              I call this my destiny. never even in my dreams the idea of being
+              an investigator ever occurred. Cyber Crime was completely a new
+              topic to me like anyone else. I was always open to trying new
+              things and am always open to new learnings and doing things
+              differently. Attending a workshop turned events for me.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="py-12 bg-white">
+      <div class="container mx-auto px-4">
+        <div
+          class="flex flex-col md:flex-row gap-8 lg:gap-12 max-w-7xl mx-auto"
+        >
+          <!-- Text Content Column -->
+          <div class="w-full md:w-3/5 text-gray-800 text-base leading-relaxed">
+            <p>
+              The year was 2003. My Grandfather’s elder brother - Sri P B Menon
+              insisted that I learn this subject called Cyber Crimes and Cyber
+              Laws. He trusted that I had it in me to made it in this space. He
+              was the senior advocate in Supreme Court of India. He was an
+              author himself. He has authored a book named - In Three Indias.
+            </p>
+
+            <p class="mt-6">
+              I did not seek to be a cyber crime investigator, this profession
+              chose me.
+            </p>
+
+            <p class="mt-6">
+              It came handy that I had learnt computers and had some working
+              experience in this space already. But most of all the commitment I
+              had to anything that I undertook worked the best. The journey was
+              not all a bed of roses but lot came as advantage to my support. I
+              still believe in the long run its our attitude and resilience to
+              tide over any situation is what matters more than our skills.
+            </p>
+
+            <div class="mt-6">
+              <p>The biggest accolades after I got into this area are:</p>
+              <p>
+                The day my grandfather spotted out a newspaper report which said
+                that he was my grandfather and that paper cutting he had trimmed
+                out to display.
+              </p>
+              <p>
+                The day my father received an award on behalf of me from the
+                school my son studied.
+              </p>
+              <p>
+                And of course, the day spent in the Rashtrapathi Bhawan for my
+                award along with 100 other eminent and proficient ladies.
+              </p>
+            </div>
+
+            <p class="mt-6">
+              The learning continues and there is more to come
+              ....................
+            </p>
+          </div>
+
+          <!-- Image Column -->
+          <div class="w-full md:w-2/5">
+            <div class="flex flex-col gap-8">
+              <img
+                src="{% static 'pattathildhanya/photos/Artboard-1Website.png' %}"
+                alt="A group of people including a woman in a striped blazer and a man in a formal black suit, at an outdoor event."
+                class="w-3/4 h-72 object-cover rounded mx-auto"
+              />
+              <img
+                src="{% static 'pattathildhanya/photos/Artboard-1dhanya1.png' %}"
+                alt="A smiling woman with glasses and a light-colored blazer against a dark background, holding a small object."
+                class="w-3/4 h-auto object-cover rounded mx-auto"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="relative py-16" style="background-image: url('{% static 'pattathildhanya/photos/Artboard-1-300x225.png' %}'); background-size: cover; background-position: center; background-repeat: no-repeat;">
+      <div class="relative z-10 container mx-auto px-6 py-8">
+        <div class="flex flex-col md:flex-row items-center max-w-6xl mx-auto">
+          <!-- Image Section -->
+          <div class="w-full md:w-2/5 flex justify-center">
+           
+            <img
+              src="{% static 'pattathildhanya/photos/4.png' %}"
+              alt="A smiling woman in traditional Indian dance attire, seated."
+              class="w-full max-w-sm md:max-w-md h-auto object-cover -my-16 md:-my-24"
+            />
+          </div>
+
+          <!-- Text Section -->
+          <div
+            class="w-full md:w-3/5 mt-8 md:mt-0 md:pl-8 lg:pl-12 text-center md:text-left"
+          >
+            <p class="text-gray-600 font-semibold text-lg">Me</p>
+            <h2
+              class="text-5xl md:text-6xl font-extrabold text-black tracking-wide mt-2"
+            >
+              THE<br />DANCER
+            </h2>
+            <p class="text-gray-800 text-base md:text-lg leading-relaxed mt-6">
+              From the time I remember I was dancing. Amma says I started
+              learning dance before I was 3. For me dance is my way of
+              conversing with my Almighty. Whether it is learning dance,
+              practicing dance, teaching dance, performing dance or even
+              discussing dance - the experience is fulfilling and energising,
+              something never tires me.
+            </p><br>
+            <a
+                href="gallery "
+                class="inline-block bg-orange-200 text-gray-800 font-semibold py-3 px-8 rounded-lg hover:bg-orange-300 transition-colors duration-300 shadow-md"
+              >
+                Gallery
+              </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-12 md:py-20">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="flex flex-col md:flex-row items-center">
+          <!-- Text Content Section -->
+          <div class="w-full md:w-1/2 md:pr-10">
+            <p class="text-gray-700 text-base md:text-lg leading-relaxed mb-6">
+              Dance did take a backseat in my life at a point of time. I was not
+              learning or practicing or performing, but I must admit that even
+              so I was dancing as I used to read, and teach. From 1999 to 2009 I
+              did not perform or practice dance. Then again, I got back to
+              dancing full-fledged. I would take time out in my travel schedules
+              to learn and practice dance with my teachers. It took me 2 years
+              of constant practice and working out to get back on stage for a
+              Katcheri in 2012. Like in my childhood the I started with
+              Mohiniyattom and then moved on to Kuchipudi as well. My arangetram
+              was in Mohiniyatton in the year 1983. My restart again in
+              Mohiniyattom in the year 2012.
+            </p>
+
+            <h3 class="text-2xl font-bold text-black mb-1">My Gurus</h3>
+            <p class="text-gray-600 text-sm mb-4">
+              (not in the order of seniority but in the order they became part
+              of my life)
+            </p>
+
+            <ul class="list-none text-gray-800 space-y-2">
+              <li>Guru Kalamandalam Subhadra</li>
+              <li>Guru Kalamandaram Kalyanikuttyamma</li>
+              <li>Guru Rama Vani Sundari</li>
+              <li>Sri Sathyanarayana Garu</li>
+              <li>Guru Dr. C P Unnikrishnan</li>
+              <li>Smt Aysha Sashidharan</li>
+              <li>Guru Korada Narasimha Rao</li>
+              <li>Guru Dr. Ardhanareeswara Venkat</li>
+              <li>Guru Anabathula Lakshmi Manga Thayaru</li>
+              <li>Guru Sai Leela</li>
+              <li>Guru Dr. Bragha Bessel</li>
+              <li>Dr. Veena Murthy Vijay</li>
+            </ul>
+          </div>
+
+          <!-- Image Section -->
+          <div class="w-full md:w-1/2 mt-10 md:mt-0 flex justify-center">
+            <img
+              src="{% static 'pattathildhanya/photos/6-980x851.png' %}"
+              alt="A woman in a traditional white and gold Indian classical dance costume, posing gracefully."
+              class="max-w-2xl w-full h-auto object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-6 max-w-6xl">
+        <div class="flex flex-col md:flex-row items-center">
+          <!-- Text and Book Section -->
+          <div class="w-full md:w-1/2 md:pr-12 text-center md:text-left">
+            <p class="text-gray-600 font-semibold text-lg">Me</p>
+            <div class="flex items-center gap-4 mt-2">
+              <h2
+                class="text-5xl md:text-6xl font-extrabold text-black tracking-wide"
+              >
+                THE<br />WRITER
+              </h2>
+              <img
+                src="{% static 'pattathildhanya/photos/news.jpg' %}"
+                alt="Book cover of Cyber Crime"
+                class="w-24 h-auto object-cover rounded-lg shadow-md"
+              />
+            </div>
+            <p
+              class="text-gray-800 text-base md:text-lg leading-relaxed max-w-md mt-6"
+            >
+              In her pursuit of excellence, Dhanya has not only honed her
+              technical skills but has also delved deep into the cultural and
+              historical aspects of each dance form. Her performances reflect
+              not only the physicality of the art but also a profound
+              understanding of the stories, emotions, and traditions embedded
+              within the classical repertoire.
+            </p>
+          </div>
+
+          <!-- Main Image Section -->
+          <div class="w-full md:w-1/2 mt-12 md:mt-0 flex justify-center">
+            <img
+              src="{% static "pattathildhanya/photos/Ma'am1.jpg" %}"
+              alt="A woman in a white and black saree, sitting gracefully."
+              class="w-full max-w-md h-auto object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex flex-col">
+
+      <div class="bg-[#F8EDEB] py-12 px-6 md:px-12">
+        <div class="container mx-auto max-w-6xl">
+          <p class="text-gray-700 font-semibold text-3xl md:text-4xl">My</p>
+          <h2
+            class="text-black font-extrabold text-5xl md:text-6xl tracking-wide"
+          >
+            SCRIBBLES
+          </h2>
+        </div>
+      </div>
+
+      <div class="flex-grow bg-white py-16 px-6 md:px-12 flex items-center">
+        <div class="container mx-auto max-w-6xl">
+          <div class="flex flex-col md:flex-row items-center justify-between">
+            <!-- Left Content: Name, Description, Button -->
+            <div class="w-full md:w-1/2 text-center md:text-left mb-10 md:mb-0">
+              <p
+                class="font-dancing-script dhanya-text text-4xl md:text-5xl text-gray-800 mb-4"
+              >
+                Pattathil Dhanya Menon
+              </p>
+              <p
+                class="text-gray-700 text-base md:text-lg leading-relaxed mb-6"
+              >
+                Join me as I share stories about my experience
+              </p>
+              <a
+                href="blog"
+                class="inline-block bg-orange-200 text-gray-800 font-semibold py-3 px-8 rounded-lg hover:bg-orange-300 transition-colors duration-300 shadow-md"
+              >
+                Read Blog
+              </a>
+            </div>
+
+            <!-- Right Content: Overlapping Images -->
+            <div
+              class=" w-full md:w-1/2 h-[350px] md:h-[450px] flex justify-center items-center"
+            >
+             
+                              <img
+                  src="{% static 'pattathildhanya/photos/Group 1000002735 (1).png' %}"
+                  alt="Pattathil Dhanya Menon standing"
+                  class="w-[400px] md:w-[450px] h-auto object-cover transform -rotate-6"
+                />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="accolades-bg py-16" style="background-image: url('{% static 'pattathildhanya/photos/left-shape1.png' %}'); background-size: 3800px 1400px ; background-position: left center; background-repeat: no-repeat;">
+      <div class="relative z-10 container mx-auto px-6 max-w-6xl">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-black tracking-wider mb-12"
+        >
+          ACCOLADES
+        </h2>
+
+    
+        <ul class="space-y-6 text-gray-800 text-base md:text-lg">
+          <li>
+            <strong>First women Achievers Award2018</strong> Presented by
+            Ministry of Women & Child development-“Award for First women Cyber
+            Crime Investigator “from president of India Sri Ram Nath Kovind
+          </li>
+          <li>
+            <strong>Hournerd by Indian Government,</strong> featured in Bharath
+            Ki Laxmi Hastag Campaign which was introduced by Hon. Prime Minister
+            of India, Shri. Narendhra Modi to celebrate the achievements of
+            Indian women as a part of the Mann Ki Baat
+          </li>
+          <li>
+            <strong>South Indian women Achievers Award (SIWAA)2019</strong
+            >-“Award for Outstanding Entrepreneur ”
+          </li>
+          <li>
+            <strong
+              >Maris 2019 John Mathai Centre 3rd International
+              Conference</strong
+            >
+            “Entrepreneurship In The Era Of Innovation And Disruption “.
+          </li>
+          <li>
+            <strong
+              >Acknowledge to service rendered in delivering a talk on the” Feel
+              Of Being a Forerunner In The Industry Cyber Crime “</strong
+            >-BNI Royals Thrissur 2019
+          </li>
+          <li>
+            <strong
+              >NPOL, Defense R& D Organization , Ministry of Defense</strong
+            >
+            presented by Naval Physical & Oceanographic Laboratory Kochi
+          </li>
+          <li>
+            <strong
+              >Responsible Netism, “Building Cyber Hygiene Culture”,</strong
+            >
+            2nd National Cyber Psychology Conference 2018,
+          </li>
+          <li>
+            <strong>Inspiring Her 2018,</strong> an initiative by Neil
+            Entertainment pvt.ltd
+          </li>
+          <li>
+            <strong>Kerala Management Association (KMA )2018 Raindrops</strong>
+            “women Achievers Award 2018”.
+          </li>
+          <li>
+            <strong>Citizen Consumer Club</strong> in association with Dept.of
+            Civil Supplies and Consumer Protection Govt of Tamilnadu 22/02/2017
+          </li>
+          <li>
+            <strong
+              >Nehru Yuva Kendra Thrissur, Ministry of Youth Affairs and Sports,
+              Govt. of India,</strong
+            >
+            “For Being First Women To Achieve The National Award For Cyber Crime
+            Investigation” from the president of India.
+          </li>
+          <li>
+            <strong>Manikkath Kshethram Thrissur,</strong> “For Being First
+            Women To Achieve The National Award For Cyber Crime Investigation”
+            from the president of India.
+          </li>
+          <li>
+            <strong
+              >chief guest of Vishistha Seva Puraskar, On The Move ,</strong
+            >
+            Vishwa Dharma Mandiram India Sthree Shakthi Ulsavam March 11
+            Bangalore.
+          </li>
+          <li>
+            <strong>VMRF Women Excellence Award 2020</strong> – Vinayaka
+            Missions Research Foundation
+          </li>
+          <li>
+            <strong
+              >Shagun The auspicious – Inspiring women of the year 2020</strong
+            >- ASSOCHAM
+          </li>
+          <li>
+            <strong>ICAI Ernakulam Branch</strong> – Women’s day felicitation
+            2020
+          </li>
+          <li>
+            <strong>S N Club</strong> – Appreciation to service to society 2020
+          </li>
+          <li>
+            <strong>JCI – Women Achievers Award 2020</strong>
+          </li>
+          <li>
+            <strong>Women in Leadership Award – GCPIT – 2021</strong>
+          </li>
+          <li>
+            <strong>Nominated as Cyber Woman of the year</strong> – Cyber
+            Security Awards – 2023
+          </li>
+        </ul>
+      </div>
+    </section>
+
+  
+    <!-- Home Page Image Carousel (Dynamic from Admin) -->
+<section class="py-16">
+  <div class="container mx-auto px-6 max-w-6xl">
+    
+    <div class="relative max-w-6xl mx-auto">
+      
+      <!-- Carousel Container -->
+      <div class="relative overflow-hidden rounded-2xl">
+        
+        <!-- Images will be injected by JS -->
+        <div id="imageCarousel" class="carousel-track flex gap-6 transition-transform duration-500 ease-in-out"></div>
+
+        <!-- Previous Button -->
+        <button
+          id="prevBtn"
+          class="absolute left-4 top-1/2 -translate-y-1/2 bg-gray-500/60 hover:bg-gray-500/80 text-white p-3 rounded-full z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <!-- Next Button -->
+        <button
+          id="nextBtn"
+          class="absolute right-4 top-1/2 -translate-y-1/2 bg-gray-500/60 hover:bg-gray-500/80 text-white p-3 rounded-full z-10">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+
+      </div>
+
+      <!-- Dots -->
+      <div id="dotsContainer" class="flex justify-center mt-6 space-x-2"></div>
+
+    </div>
+  </div>
+</section>
+
+
+        <!-- Custom Scrollbar -->
+        <div
+          class="absolute right-2.5 top-1/2 -translate-y-1/2 h-52 w-1.5 bg-gray-200 rounded-full flex justify-center"
+        >
+          <div class="h-16 w-full bg-gray-400 rounded-full"></div>
+        </div>
+      </div>
+    </div>
+
+<!-- Other Solutions -->
+<section class="w-full relative flex flex-col items-center justify-center h-[500px] relative" style="background-image: url('{% static 'pattathildhanya/photos/circle-image.png' %}'); background-size: 1500px 700px; background-position: right center; background-repeat: no-repeat;">
+  <div>
+    <img src="{% static 'pattathildhanya/photos/solution-main-logo.png' %}" class="w-80" alt="">
+  </div>
+
+  <!-- solution images -->
+  <div class="solutions-image flex flex-wrap justify-center gap-12 mt-8">
+    <a href="https://avanzosolutions.com/" target="_blank">
+      <img src="{% static 'pattathildhanya/photos/solution1.png' %}" alt="Solution 1" class="w-24 h-24 md:w-32 md:h-32 object-contain hover:scale-110 transition-transform duration-300">
+    </a>
+    <a href="https://avanzotrust.in/" target="_blank">
+      <img src="{% static 'pattathildhanya/photos/solution2.png' %}" alt="Solution 2" class="w-24 h-24 md:w-32 md:h-32 object-contain hover:scale-110 transition-transform duration-300">
+    </a>
+    <a href="https://cap.ind.in/" target="_blank">
+      <img src="{% static 'pattathildhanya/photos/solution3.png' %}" alt="Solution 3" class="w-24 h-24 md:w-32 md:h-32 object-contain hover:scale-110 transition-transform duration-300">
+    </a>
+    <a href="https://salabhanjika.com/" target="_blank">
+      <img src="{% static 'pattathildhanya/photos/solution4.png' %}" alt="Solution 4" class="w-24 h-24 md:w-32 md:h-32 object-contain hover:scale-110 transition-transform duration-300">
+    </a>
+    <a href="https://avanzoacademy.com/" target="_blank">
+      <img src="{% static 'pattathildhanya/photos/solution5.png' %}" alt="Solution 5" class="w-24 h-24 md:w-32 md:h-32 object-contain hover:scale-110 transition-transform duration-300">
+    </a>
+    <a href="cybersol " target="_blank">
+      <img src="{% static 'pattathildhanya/photos/solution6.png' %}" alt="Solution 6" class="w-24 h-24 md:w-32 md:h-32 object-contain hover:scale-110 transition-transform duration-300">
+    </a>
+  </div>
+</section>
+
+
+
+    <div style="background-image: url('{% static 'pattathildhanya/photos/shape.png' %}') ;background-repeat: no-repeat; background-position: left center; background-size: 1800px 900px;" class="relative min-h-screen flex flex-col overflow-hidden">
+
+      <!-- Main Content Area (Contact Form) -->
+      <div
+        class="relative z-10 w-full max-w-3xl mx-auto pt-24 pb-16 px-4 sm:px-6 lg:px-8 flex flex-col items-start flex-grow"
+      >
+        <h1
+          class="text-6xl font-bold text-gray-800 mb-12 uppercase tracking-wide"
+        >
+          CONTACT
+        </h1>
+
+
+        <form action="https://api.web3forms.com/submit" method="POST" class="w-full space-y-6">
+          <input type="hidden" name="access_key" value="ed77a189-b78f-4c66-8dec-ab2846cce52a">
+    
+          <input
+            type="text"
+            name="name"
+             required
+            placeholder="Name"
+            class="w-full p-4 bg-gray-100 rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300"
+          />
+          <textarea name="message" required
+            placeholder="Message"
+            rows="10"
+            class="w-full p-4 bg-gray-100 rounded-lg placeholder-gray-500 text-gray-800 focus:outline-none focus:ring-2 focus:ring-blue-300 resize-none"
+          ></textarea>
+          <button type="submit"
+            class="self-end ml-auto px-8 py-3 bg-white border-2 border-blue-500 text-blue-500 font-semibold rounded-md hover:bg-blue-50 hover:text-blue-600 transition duration-300"
+          >
+            Submit
+          </button>
+        </form>
+      </div>
+
+      <!-- Footer -->
+      <footer
+        class="w-full bg-gray-800 text-gray-400 text-sm py-4 text-center z-20"
+      >
+        A unit of Avanzo Cyber Security Solutions | Avanzo Designs
+      </footer>
+
+      <!-- Scrollbar -->
+      <div
+        class="absolute right-2.5 top-1/2 -translate-y-1/2 h-52 w-1.5 bg-gray-200 rounded-full z-30"
+      >
+        <div class="h-16 w-full bg-gray-400 rounded-full"></div>
+      </div>
+    </div>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
+    <!-- Carousel JavaScript -->
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const carousel = document.getElementById('imageCarousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+
+    // Use Django variable passed from view
+    const imagesData = [
+        {% for url in image_urls %}
+            "{{ url }}"{% if not forloop.last %},{% endif %}
+        {% endfor %}
+    ];
+
+    const slides = [];
+    const makeImg = (src) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = 'Gallery image';
+        img.className = 'carousel-image w-80 h-96 object-cover rounded-lg';
+        img.draggable = false;
+        return img;
+    };
+
+    // Prepend/append for infinite effect
+    slides.push(makeImg(imagesData[imagesData.length - 2]));
+    slides.push(makeImg(imagesData[imagesData.length - 1]));
+
+    imagesData.forEach(src => slides.push(makeImg(src)));
+
+    slides.push(makeImg(imagesData[0]));
+    slides.push(makeImg(imagesData[1]));
+
+    slides.forEach(img => carousel.appendChild(img));
+
+    const dotsContainer = document.getElementById('dotsContainer');
+    const dots = [];
+    if (dotsContainer) {
+        imagesData.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.className = 'w-2.5 h-2.5 bg-gray-400 rounded-full transition-all duration-300';
+            dot.dataset.index = String(idx);
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+        });
+    }
+
+    let currentIndex = 2;
+    const totalImages = imagesData.length;
+
+    function updateCarousel() {
+        const sample = carousel.querySelector('.carousel-image');
+        const sampleStyles = sample ? window.getComputedStyle(sample) : null;
+        const imageWidth = sample ? sample.clientWidth : 320; 
+        const marginLeft = sampleStyles ? parseFloat(sampleStyles.marginLeft) || 0 : 0;
+        const marginRight = sampleStyles ? parseFloat(sampleStyles.marginRight) || 0 : 0;
+        const margin = marginLeft + marginRight; 
+        const containerEl = carousel.parentElement; 
+        const containerWidth = containerEl ? containerEl.clientWidth : window.innerWidth;
+        const translateX = -(currentIndex * (imageWidth + margin)) + (containerWidth / 2) - (imageWidth / 2);
+        carousel.style.transform = `translateX(${translateX}px)`;
+
+        const allImgs = carousel.querySelectorAll('.carousel-image');
+        allImgs.forEach((img, index) => {
+            img.classList.remove('active');
+            if (index === currentIndex) img.classList.add('active');
+        });
+
+        if (dots.length) {
+            const realIndex = ((currentIndex - 2) % totalImages + totalImages) % totalImages;
+            dots.forEach((dot, i) => {
+                if (i === realIndex) {
+                    dot.classList.remove('bg-gray-400');
+                    dot.classList.add('bg-gray-800');
+                } else {
+                    dot.classList.remove('bg-gray-800');
+                    dot.classList.add('bg-gray-400');
+                }
+            });
+        }
+    }
+
+    function nextSlide() {
+        if (currentIndex === totalImages + 1) {
+            carousel.style.transition = 'none';
+            currentIndex = 2;
+            updateCarousel();
+            setTimeout(() => { carousel.style.transition = 'transform 0.5s ease-in-out'; }, 10);
+            return;
+        }
+        currentIndex++;
+        updateCarousel();
+    }
+
+    function prevSlide() {
+        currentIndex--;
+        if (currentIndex < 2) {
+            setTimeout(() => {
+                carousel.style.transition = 'none';
+                currentIndex = totalImages + 1;
+                updateCarousel();
+                setTimeout(() => { carousel.style.transition = 'transform 0.5s ease-in-out'; }, 10);
+            }, 500);
+        }
+        updateCarousel();
+    }
+
+    nextBtn.addEventListener('click', nextSlide);
+    prevBtn.addEventListener('click', prevSlide);
+
+    if (dots.length) {
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index + 2;
+                updateCarousel();
+            });
+        });
+    }
+
+    setInterval(nextSlide, 5000);
+    carousel.style.transition = 'none';
+    updateCarousel();
+    setTimeout(() => { carousel.style.transition = 'transform 0.5s ease-in-out'; }, 10);
+    window.addEventListener('resize', updateCarousel);
+});
+</script>
+
+
+
+    <!-- <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const carousel = document.getElementById('imageCarousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+
+        const imagesData = [
+          'images/JPG/scroll-image1.png',
+          'images/JPG/scroll-image2.png',
+          'images/JPG/scroll-image3.png',
+          'images/JPG/scroll-image4.jpeg',
+          'images/JPG/scroll-image5.jpeg',
+          'images/JPG/scroll-image6.jpeg',
+          'images/JPG/scroll-image7.jpeg',
+          'images/JPG/scroll-image8.jpeg',
+          'images/JPG/1.jpg','images/JPG/2.jpg','images/JPG/4.jpg','images/JPG/5.jpg','images/JPG/6.jpg','images/JPG/7.jpg','images/JPG/8.jpg','images/JPG/9.jpg','images/JPG/10.jpg','images/JPG/11.jpg','images/JPG/12.jpg','images/JPG/13.jpg','images/JPG/14.jpg','images/JPG/15.jpg','images/JPG/17.jpg','images/JPG/18.jpg','images/JPG/19.jpg','images/JPG/20.jpg','images/JPG/21.jpg','images/JPG/22.jpg','images/JPG/23.jpg','images/JPG/24.jpg','images/JPG/25.jpg','images/JPG/26.jpg','images/JPG/27.jpg','images/JPG/28.jpg','images/JPG/29.jpg','images/JPG/30.jpg','images/JPG/31.jpg','images/JPG/32.jpg','images/JPG/33.jpg','images/JPG/34.jpg','images/JPG/35.jpg','images/JPG/36.jpg','images/JPG/37.jpg','images/JPG/38.jpg','images/JPG/39.jpg','images/JPG/40.jpg','images/JPG/41.jpg','images/JPG/42.jpg','images/JPG/43.jpg','images/JPG/44.jpg','images/JPG/45.jpg','images/JPG/46.jpg'
+        ];
+
+       
+        const slides = [];
+        const makeImg = (src) => {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = 'Gallery image';
+          img.className = 'carousel-image w-80 h-96 object-cover rounded-lg';
+          img.draggable = false;
+          return img;
+        };
+
+        slides.push(makeImg(imagesData[imagesData.length - 2]));
+        slides.push(makeImg(imagesData[imagesData.length - 1]));
+       
+        imagesData.forEach(src => slides.push(makeImg(src)));
+     
+        slides.push(makeImg(imagesData[0]));
+        slides.push(makeImg(imagesData[1]));
+
+        slides.forEach(img => carousel.appendChild(img));
+
+        const dotsContainer = document.getElementById('dotsContainer');
+        const dots = [];
+        if (dotsContainer) {
+          imagesData.forEach((_, idx) => {
+            const dot = document.createElement('button');
+            dot.className = 'w-2.5 h-2.5 bg-gray-400 rounded-full transition-all duration-300';
+            dot.dataset.index = String(idx);
+            dotsContainer.appendChild(dot);
+            dots.push(dot);
+          });
+        }
+
+        let currentIndex = 2;
+        const totalImages = imagesData.length;
+
+        function updateCarousel() {
+          const sample = carousel.querySelector('.carousel-image');
+          const sampleStyles = sample ? window.getComputedStyle(sample) : null;
+          const imageWidth = sample ? sample.clientWidth : 320; 
+          const marginLeft = sampleStyles ? parseFloat(sampleStyles.marginLeft) || 0 : 0;
+          const marginRight = sampleStyles ? parseFloat(sampleStyles.marginRight) || 0 : 0;
+          const margin = marginLeft + marginRight; 
+          const containerEl = carousel.parentElement; 
+          const containerWidth = containerEl ? containerEl.clientWidth : window.innerWidth;
+          const translateX = -(currentIndex * (imageWidth + margin)) + (containerWidth / 2) - (imageWidth / 2);
+          carousel.style.transform = `translateX(${translateX}px)`;
+
+          const allImgs = carousel.querySelectorAll('.carousel-image');
+          allImgs.forEach((img, index) => {
+            img.classList.remove('active');
+            if (index === currentIndex) img.classList.add('active');
+          });
+
+          
+          if (dots.length) {
+            const realIndex = ((currentIndex - 2) % totalImages + totalImages) % totalImages;
+            dots.forEach((dot, i) => {
+              if (i === realIndex) {
+                dot.classList.remove('bg-gray-400');
+                dot.classList.add('bg-gray-800');
+              } else {
+                dot.classList.remove('bg-gray-800');
+                dot.classList.add('bg-gray-400');
+              }
+            });
+          }
+        }
+
+        function nextSlide() {
+      
+          if (currentIndex === totalImages + 1) {
+            carousel.style.transition = 'none';
+            currentIndex = 2;
+            updateCarousel();
+            setTimeout(() => { carousel.style.transition = 'transform 0.5s ease-in-out'; }, 10);
+            return;
+          }
+
+          currentIndex++;
+          updateCarousel();
+        }
+
+        function prevSlide() {
+          currentIndex--;
+          if (currentIndex < 2) {
+            setTimeout(() => {
+              carousel.style.transition = 'none';
+              currentIndex = totalImages + 1;
+              updateCarousel();
+              setTimeout(() => { carousel.style.transition = 'transform 0.5s ease-in-out'; }, 10);
+            }, 500);
+          }
+          updateCarousel();
+        }
+
+        nextBtn.addEventListener('click', nextSlide);
+        prevBtn.addEventListener('click', prevSlide);
+   
+        if (dots.length) {
+          dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+              currentIndex = index + 2;
+              updateCarousel();
+            });
+          });
+        }
+
+        setInterval(nextSlide, 5000);
+        carousel.style.transition = 'none';
+        updateCarousel();
+        setTimeout(() => { carousel.style.transition = 'transform 0.5s ease-in-out'; }, 10);
+        window.addEventListener('resize', updateCarousel);
+      });
+
+      const form = document.querySelector('form[action="https://api.web3forms.com/submit"]');
+      if (form) {
+        form.addEventListener("submit", function(e) {
+          e.preventDefault();
+          fetch(form.action, { method: form.method, body: new FormData(form) })
+            .then(res => res.json())
+            .then(data => {
+              if (data.success === true || data.status === "success") {
+                alert("Message sent successfully!");
+                form.reset();
+              } else {
+                alert("Something went wrong: " + data.message);
+              }
+            })
+            .catch(error => alert("Error: " + error));
+        });
+      }
+    </script> -->
+  </body>
+</html>

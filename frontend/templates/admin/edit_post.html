@@ -1,0 +1,107 @@
+{% load widget_tweaks %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Post - Admin</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+  .django-ckeditor-widget {
+    width: 100% !important;
+  }
+
+  .django-ckeditor-widget iframe {
+    width: 100% !important;
+  }
+  
+</style>
+
+
+
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Header -->
+    <header class="bg-blue-600 text-white py-6 shadow-md">
+        <div class="max-w-7xl mx-auto px-4">
+            <h1 class="text-3xl font-bold">Edit Post</h1>
+            <p class="text-blue-100 mt-1">Update your blog post details.</p>
+        </div>
+    </header>
+
+    <!-- Form Container -->
+    <main class="flex-1 flex justify-center items-start mt-10 px-4">
+        <form method="POST" enctype="multipart/form-data"
+              class="w-full max-w-2xl bg-white p-8 rounded-2xl shadow-lg space-y-6">
+            {% csrf_token %}
+
+            <!-- Title -->
+            <div>
+                <label for="id_title" class="block text-gray-700 font-medium mb-1">Title</label>
+                {{ form.title|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" }}
+            </div>
+
+            <!-- Excerpt -->
+            <div>
+                <label for="id_excerpt" class="block text-gray-700 font-medium mb-1">Excerpt</label>
+                {{ form.excerpt|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" }}
+            </div>
+
+            <!-- Content -->
+            <div>
+                <label for="id_content" class="block text-gray-700 font-medium mb-1">Content</label>
+                {{ form.content|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 h-40" }}
+            </div>
+
+            <!-- Category -->
+            <div>
+                <label for="id_category" class="block text-gray-700 font-medium mb-1">Category</label>
+                {{ form.category|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400" }}
+            </div>
+
+            <!-- Current Image Preview -->
+            {% if post.image %}
+            <div class="mt-4">
+                <p class="text-gray-700 font-medium mb-2">Current Featured Image:</p>
+                <img src="{{ post.image.url }}" alt="Featured Image"
+                     class="w-full h-52 object-cover rounded-lg shadow-md border">
+            </div>
+            {% endif %}
+
+            <!-- Upload New Image -->
+            <div>
+                <label for="id_image" class="block text-gray-700 font-medium mb-1">Change Image</label>
+                {{ form.image|add_class:"w-full px-4 py-2 border rounded-lg bg-white focus:outline-none focus:ring-2 focus:ring-blue-400" }}
+            </div>
+
+            <!-- By whom -->
+            <div>
+                <label for="id_by" class="block text-gray-700 font-medium mb-1">By Whom</label>
+                {{ form.by|add_class:"w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400" }}
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex flex-col sm:flex-row sm:space-x-4 space-y-4 sm:space-y-0 mt-6">
+                <button type="submit" name="status" value="published"
+                        class="w-full sm:w-auto px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-lg transition">
+                    Update & Publish
+                </button>
+
+                <button type="submit" name="status" value="draft"
+                        class="w-full sm:w-auto px-6 py-3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold rounded-lg transition">
+                    Update Draft
+                </button>
+
+                <a href="{% url 'admin_dashboard' %}"
+                   class="w-full sm:w-auto px-6 py-3 bg-gray-400 hover:bg-gray-500 text-white text-center font-semibold rounded-lg transition">
+                    Cancel
+                </a>
+            </div>
+
+        </form>
+    </main>
+
+</body>
+</html>

@@ -1,0 +1,382 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Avanzo CyberSol - Your Shield in Digital Realm</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#00b9c8',   /* Teal */
+                        secondary: '#01435f', /* Dark Blue */
+                        highlight: '#89dae2', /* Light Aqua */
+                        deepblue: '#007790',  /* Ocean Blue */
+                        purplegray: '#5d5d95',/* Grayish Purple */
+                        tealshade: '#035c7a', /* Deep Teal */
+                        muted: '#64748b'      /* keep muted for text */
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="min-h-screen bg-slate-50 text-gray-900">
+    <!-- Corrected Background Image Setup -->
+    <div class="fixed inset-0 z-0">
+        <img src="{% static 'pattathildhanya/photos/BG 3-01.png' %}" alt="Background" class="w-full h-full object-cover opacity-30" />
+        <div class="absolute inset-0 bg-white/60"></div>
+   </div>
+
+   <!-- Content Wrapper -->
+   <div class="relative z-10">
+       <!-- Back link -->
+       <div class="absolute top-8 left-4 sm:left-6 lg:left-8">
+            <a href="{% url 'index' %}" class="flex items-center text-black/80 hover:text-primary transition-colors duration-300 group">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6 mr-2 transform group-hover:-translate-x-1 transition-transform duration-300">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                </svg>
+                <span class="text-sm font-medium">Back to Home</span>
+            </a>
+        </div>
+
+        <!-- Hero Section -->
+        <section class="bg-gradient-to-br from-highlight/30 to-primary/20 py-20">
+            <div class="container mx-auto px-4 text-center">
+                <h1 class="text-4xl md:text-6xl font-bold text-primary mb-6">
+                    Your Shield in <span class="text-purplegray">Digital Realm</span>
+                </h1>
+                <p class="text-xl text-muted max-w-3xl mx-auto mb-8 leading-relaxed">
+                    In a world where information is the currency of the future, securing your business against cyber threats is not just a choice; it's a necessity. Avanzo Cyber Security Solutions proudly presents CyberSol.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="assets/images/CyberSol brochure.pdf" target="_blank">
+                        <button class="bg-primary text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                            Explore CyberSol
+                        </button>
+                    </a>
+
+                    <a href="contact "target="_blank">
+                        <button class="border border-purplegray text-purplegray px-8 py-3 rounded-lg font-semibold hover:bg-highlight/10 transition-colors">
+                            Contact Us
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Why CyberSol Section -->
+        <section id="solutions" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why CyberSol?</h2>
+                    <p class="text-lg text-muted max-w-2xl mx-auto">
+                        As technology advances, so do the threats posed by malicious actors seeking to exploit vulnerabilities in organizational systems.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Protection of Sensitive Data</h3>
+                        <p class="text-muted">Safeguard your critical business information from unauthorized access and breaches.</p>
+                    </div>
+                    
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-deepblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-deepblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Compliance Requirements</h3>
+                        <p class="text-muted">Meet industry standards and regulatory requirements with certified solutions.</p>
+                    </div>
+                    
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Operational Continuity</h3>
+                        <p class="text-muted">Ensure your business operations continue smoothly even during cyber incidents.</p>
+                    </div>
+                    
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-deepblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-8 h-8 text-deepblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-semibold text-gray-900 mb-2">Preservation of Reputation</h3>
+                        <p class="text-muted">Protect your brand reputation from the damaging effects of cyber attacks.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CyberSol Packages -->
+        <section id="packages" class="py-20 bg-slate-50">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">CyberSol Packages</h2>
+                    <p class="text-lg text-muted max-w-2xl mx-auto">
+                        Choose the perfect cybersecurity solution tailored to your organization's needs.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <!-- Basic Package -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 hover:border-primary/50 transition-all duration-300">
+                        <div class="text-center mb-6">
+                            <div class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                                Basic Starter Pack
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">CyberSol Basic</h3>
+                            <p class="text-muted">Defense Suite</p>
+                        </div>
+                        
+                        <div class="space-y-4 mb-8">
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center mt-0.5">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Data DamTech</h4>
+                                    <p class="text-sm text-muted">Advanced breach detection and access controls(25,000)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center mt-0.5">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Data FloodControl</h4>
+                                    <p class="text-sm text-muted">Regulate data flow and prevent overload(25,000)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center mt-0.5">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Data DeepCleaning</h4>
+                                    <p class="text-sm text-muted">Eliminate vulnerabilities and digital clutter (4000 per Machine)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center mt-0.5">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Data SonarVigil</h4>
+                                    <p class="text-sm text-muted">Detect anomalies with precision sonar technology(25,000)</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-3">
+                                <div class="w-5 h-5 bg-primary/20 rounded-full flex items-center justify-center mt-0.5">
+                                    <div class="w-2 h-2 bg-primary rounded-full"></div>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Data SpillStorm Recovery</h4>
+                                    <p class="text-sm text-muted">Resilient data recovery and restoration(25,000)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                            Get Started
+                        </button>
+                    </div>
+
+                    <!-- CyberSol+ Package -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-deepblue hover:border-deepblue/70 transition-all duration-300 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-deepblue text-white px-4 py-1 rounded-full text-sm font-medium">Certified</span>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="inline-block bg-deepblue/10 text-deepblue px-3 py-1 rounded-full text-sm font-medium mb-4">
+                                Your Certified Shield
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">CyberSol+</h3>
+                            <p class="text-muted">Against Digital Threats</p>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm text-muted">All Basic features plus:</p>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-deepblue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="font-semibold text-gray-900">ISO 27001 Certification</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-deepblue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="font-semibold text-gray-900">ISO 27002 Certification</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <svg class="w-5 h-5 text-deepblue" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                                <span class="font-semibold text-gray-900">ISO 27701 Certification</span>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-deepblue/5 p-4 rounded-lg mb-8">
+                            <p class="text-sm font-medium text-deepblue text-center">Certification of Being Data Proof</p>
+                        </div>
+                        
+                        <button class="w-full bg-deepblue text-white py-3 rounded-lg font-semibold hover:bg-deepblue/90 transition-colors">
+                            Get Certified
+                        </button>
+                    </div>
+
+                    <!-- CyberSol Pro Package -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-200 hover:border-primary/50 transition-all duration-300">
+                        <div class="text-center mb-6">
+                            <div class="inline-block bg-primary/10 text-primary px-3 py-1 rounded-full text-sm font-medium mb-4">
+                                Advanced Protection
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">CyberSol Pro</h3>
+                            <p class="text-muted">Cybersecurity Sophistication</p>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm text-muted">All Basic features plus:</p>
+                            <div class="space-y-3">
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">GrapevineGrid Radar</h4>
+                                    <p class="text-sm text-muted">Monitor digital chatter and emerging threats(30,000)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">Cybernomy Surveillance</h4>
+                                    <p class="text-sm text-muted">Secure financial transactions and assets(35,000)</p>
+                                </div>
+                                <div>
+                                    <h4 class="font-semibold text-gray-900">InfoSphereScan</h4>
+                                    <p class="text-sm text-muted">Comprehensive vulnerability scanning(30,000)</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <button class="w-full bg-primary text-white py-3 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                            Go Pro
+                        </button>
+                    </div>
+
+                    <!-- CyberSol Pro+ Package -->
+                    <div class="bg-white rounded-xl p-8 shadow-lg border-2 border-deepblue hover:border-deepblue/70 transition-all duration-300 relative">
+                        <div class="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                            <span class="bg-deepblue text-white px-4 py-1 rounded-full text-sm font-medium">Ultimate</span>
+                        </div>
+                        
+                        <div class="text-center mb-6">
+                            <div class="inline-block bg-deepblue/10 text-deepblue px-3 py-1 rounded-full text-sm font-medium mb-4">
+                                Defining the Future
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-900 mb-2">CyberSol Pro+</h3>
+                            <p class="text-muted">Of Cybersecurity</p>
+                        </div>
+                        
+                        <div class="space-y-3 mb-6">
+                            <p class="text-sm text-muted">All Pro features plus:</p>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">CyberAsset Guard</h4>
+                                <p class="text-sm text-muted">Ultimate digital asset protection(45,000)</p>
+                            </div>
+                        </div>
+                        
+                        <div class="bg-deepblue/5 p-4 rounded-lg mb-8">
+                            <p class="text-sm font-medium text-deepblue text-center">Certification of Being Data Proof+(45,000)</p>
+                        </div>
+                        
+                        <button class="w-full bg-deepblue text-white py-3 rounded-lg font-semibold hover:bg-deepblue/90 transition-colors">
+                            Ultimate Protection
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 bg-white">
+            <div class="container mx-auto px-4">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Get in Touch</h2>
+                    <p class="text-lg text-muted max-w-2xl mx-auto">
+                        Ready to secure your digital future? Contact our cybersecurity experts today.
+                    </p>
+                </div>
+                
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <div class="text-center p-6 bg-slate-50 rounded-xl">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Phone</h3>
+                        <p class="text-muted">+91 7034 1097 10</p>
+                        <p class="text-muted">+91 7356 1111 28</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-slate-50 rounded-xl">
+                        <div class="w-12 h-12 bg-deepblue/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-deepblue" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Email</h3>
+                        <p class="text-muted">info@avanzosolutions.in</p>
+                    </div>
+                    
+                    <div class="text-center p-6 bg-slate-50 rounded-xl">
+                        <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9v-9m0-9v9"></path>
+                            </svg>
+                        </div>
+                        <h3 class="font-semibold text-gray-900 mb-2">Website</h3>
+                        <p class="text-muted">avanzosolutions.in</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-white py-12">
+            <div class="container mx-auto px-4">
+                <div class="text-center">
+                    <div class="flex items-center justify-center space-x-3 mb-4">
+                        <div class="w-20 h-20  rounded-lg flex items-center justify-center">
+                            <img src="{% static 'pattathildhanya/photos/logo.png' %}" alt="Avanzo Cyber Security Solutions Pvt. Ltd. Logo" class="w-full h-full object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold">Avanzo Cyber Security Solutions Pvt. Ltd.</h3>
+                            <p class="text-gray-400">Your Shield in Digital Realm</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 max-w-2xl mx-auto">
+                        Protecting your business with cutting-edge cybersecurity solutions. 
+                        From basic protection to enterprise-grade security, we've got you covered.
+                    </p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
