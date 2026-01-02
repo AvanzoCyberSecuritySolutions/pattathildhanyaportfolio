@@ -659,7 +659,13 @@ document.addEventListener('DOMContentLoaded', function() {
             "{{ url }}"{% if not forloop.last %},{% endif %}
         {% endfor %}
     ];
-
+    
+    // ✅ ADD THIS BLOCK RIGHT HERE /
+    if (!imagesData || imagesData.length < 2) {
+        console.warn("Not enough gallery images for carousel:", imagesData);
+        return;
+    }
+    // / ✅ END 
     const slides = [];
     const makeImg = (src) => {
         const img = document.createElement('img');

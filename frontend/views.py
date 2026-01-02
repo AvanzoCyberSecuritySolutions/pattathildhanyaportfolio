@@ -6,13 +6,35 @@ from .models import AdminUser, Post
 from django.shortcuts import get_object_or_404
 
 from .models import GalleryImage, HomeGalleryImage
-
+import os
+from django.conf import settings
+from django.templatetags.static import static
 
 import json
 from django.core.serializers import serialize
 
 def index(request):
-    return render(request, 'pattathildhanya/index.html')
+    gallery_dir = os.path.join(
+        settings.BASE_DIR,
+        'frontend',
+        'static',
+        'pattathildhanya',
+        'photos',
+        'gallery'
+    )
+
+    image_urls = []
+
+    if os.path.exists(gallery_dir):
+        for file in sorted(os.listdir(gallery_dir)):
+            if file.lower().endswith(('.jpg', '.jpeg', '.png', '.webp')):
+                image_urls.append(
+                    static(f'pattathildhanya/photos/gallery/{file}')
+                )
+
+    return render(request, 'pattathildhanya/index.html', {
+        'image_urls': image_urls
+    })
 
 def blog(request):
     return render(request, 'pattathildhanya/blog.html')
