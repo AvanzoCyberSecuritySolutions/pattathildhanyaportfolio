@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
 ROOT_URLCONF = 'pattathildhanya.urls'
 
@@ -136,14 +136,30 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "frontend/static"]
+# STATIC_URL = '/static/'
+# STATICFILES_DIRS = [BASE_DIR / "frontend/static"]
 
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR / 'frontend' / 'media'
+
+# CKEDITOR_UPLOAD_PATH = "uploads/"
+
+STATIC_URL = '/static/'
+
+# ✅ REQUIRED FOR collectstatic + WhiteNoise
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
+STATICFILES_DIRS = [
+    BASE_DIR / 'frontend' / 'static',
+]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'frontend' / 'media'
 
 CKEDITOR_UPLOAD_PATH = "uploads/"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 
 # Default primary key field type
