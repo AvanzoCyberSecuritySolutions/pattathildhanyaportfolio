@@ -78,13 +78,22 @@ WSGI_APPLICATION = 'mysite.wsgi.application'
 
 CSRF_TRUSTED_ORGINS = ['http://rk088wgks88k0g8g0kows8g0.152.70.69.131.sslip.io/']
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
 WSGI_APPLICATION = 'pattathildhanya.wsgi.application'
+SESSION_ENGINE = "django.contrib.sessions.backends.db"
+
+SESSION_COOKIE_HTTPONLY = True
+SESSION_COOKIE_SAMESITE = "Lax"
+
+
+SESSION_COOKIE_SECURE = False
+
+CSRF_COOKIE_SECURE = False
 
 
 # Database
