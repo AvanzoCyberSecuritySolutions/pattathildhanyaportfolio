@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-k4%edak$56&!b+gg#s9e8d@&%t0+0$@l@!t61=rd2pmbedra!1
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*","https://pattathildhanya.in"]
+ALLOWED_HOSTS = ["*","http://rk088wgks88k0g8g0kows8g0.152.70.69.131.sslip.io/"]
 
 
 # Application definition
@@ -74,7 +74,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
-CSRF_TRUSTED_ORGINS = ['https://pattathildhanya.in']
+CSRF_TRUSTED_ORGINS = ['http://rk088wgks88k0g8g0kows8g0.152.70.69.131.sslip.io/']
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
