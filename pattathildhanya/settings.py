@@ -27,6 +27,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*","http://rk088wgks88k0g8g0kows8g0.152.70.69.131.sslip.io/"]
 
+if not DEBUG:
+    SECURE_CROSS_ORIGIN_OPENER_POLICY = "same-origin"
 
 # Application definition
 
