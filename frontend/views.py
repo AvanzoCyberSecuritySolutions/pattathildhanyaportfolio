@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.contrib import messages
 from .forms import BlogPostForm
 from .models import AdminUser, Post
+from django.contrib.auth.hashers import check_password
 
 from django.shortcuts import get_object_or_404
 
@@ -46,6 +47,11 @@ def gallery(request):
     return render(request, 'pattathildhanya/gallery.html')
 
 
+
+from django.contrib import messages
+from django.shortcuts import render, redirect
+from frontend.models import AdminUser
+
 def admin_login(request):
     if request.method == "POST":
         email = request.POST.get("email", "").strip()
@@ -54,9 +60,8 @@ def admin_login(request):
         try:
             admin = AdminUser.objects.get(email=email)
 
-            if admin.password == password:
+            if check_password(password, admin.password):
                 request.session['admin_logged_in'] = True
-                request.session['admin_email'] = admin.email
                 return redirect("admin_dashboard")
             else:
                 messages.error(request, "Invalid password")
