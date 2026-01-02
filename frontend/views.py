@@ -48,17 +48,24 @@ def gallery(request):
 
 def admin_login(request):
     if request.method == "POST":
-        email = request.POST.get("email")
-        password = request.POST.get("password")
+        email = request.POST.get("email", "").strip()
+        password = request.POST.get("password", "").strip()
 
         try:
-            admin = AdminUser.objects.get(email=email, password=password)
-            request.session['admin_logged_in'] = True
-            return redirect("admin_dashboard") 
+            admin = AdminUser.objects.get(email=email)
+
+            if admin.password == password:
+                request.session['admin_logged_in'] = True
+                request.session['admin_email'] = admin.email
+                return redirect("admin_dashboard")
+            else:
+                messages.error(request, "Invalid password")
+
         except AdminUser.DoesNotExist:
-            messages.error(request, "Invalid Login")
-    
+            messages.error(request, "Admin user not found")
+
     return render(request, "admin/admin_login.html")
+
 
 
 
